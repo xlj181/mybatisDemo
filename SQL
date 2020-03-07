@@ -1,0 +1,19 @@
+/*Table structure for table `book` */
+
+DROP TABLE IF EXISTS `book`;
+
+CREATE TABLE `book` (
+  `book_id` int(11) NOT NULL AUTO_INCREMENT,
+  `book_name` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `book_author` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `book_saleTime` date DEFAULT NULL,
+  `book_price` double DEFAULT NULL,
+  `book_type` int(11) DEFAULT NULL,
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `book` */
+
+insert  into `book`(`book_id`,`book_name`,`book_author`,`book_saleTime`,`book_price`,`book_type`) values (1,'鹿鼎记','金庸','2019-05-14',150,3),(3,'倚天屠龙记','金庸','2017-02-11',150,3),(4,'神雕侠侣','金庸','2019-05-14',150,6),(5,'倚天屠龙记','金庸','2019-05-14',150,2),(8,'鹿鼎记','金庸','2018-05-18',453,4),(9,'鹿鼎记','金庸','2019-05-18',520,3),(10,'鹿鼎记','SDAS','2019-05-18',123,4),(22,'ssm轻量级框架','人民邮电出版社','2019-05-25',4000,2),(23,'SSH框架','人民邮电出版社','2019-05-25',3500,2),(24,'JavaWeb','人民邮电出版社','2019-05-25',3000,2),(25,'Java高级特性','人民邮电出版社','2019-05-25',2000,2),(26,'ssm轻量级框架','人民邮电出版社','2019-05-25',4000,2),(28,'ssm轻量级框架','人民邮电出版社','2019-05-25',4000,2);
+
+/*Table structure for table `booktype` */

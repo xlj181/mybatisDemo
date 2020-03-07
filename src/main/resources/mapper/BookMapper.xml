@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "heep://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.demo.dao.BookDao">
+    <!--查询全部-->
+    <select id="findAll" resultType="com.mybatis.demo.entity.Book">
+        select * from book;
+    </select>
+    <!--查询单条-->
+    <select id="findById" parameterType="int" resultType="com.mybatis.demo.entity.Book">
+        select * from book where id=#{id}
+    </select>
+    <!--模糊查询-->
+    <select id="findByName" parameterType="string" resultType="com.mybatis.demo.entity.Book">
+        select * from book where authorName like '%${value}%'
+    </select>
+    <!--添加-->
+    <insert id="insertBook" parameterType="com.mybatis.demo.entity.Book">
+        insert into book(name,authorName,price,press)values(#{name},#{authorName},#{price},#{press})
+    </insert>
+    <!--修改-->
+    <update id="updateBook" parameterType="com.mybatis.demo.entity.Book">
+        update book set name=#{name},authorName=#{authorName},price=#{price},press=#{press} where id=#{id}
+    </update>
+    <!--删除-->
+    <delete id="deleteBook" parameterType="integer">
+        delete from book where id=#{id}
+    </delete>
+
+</mapper>
